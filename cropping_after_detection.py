@@ -38,6 +38,7 @@ This code is used to get the area \
 as well as saving the cropped images
 """
 count = 0
+text_in_list = list()
 for i in split_result:
 	if 'left_x' in i:
 		data = i.split()
@@ -48,4 +49,13 @@ for i in split_result:
 		area = (x,y,(x+w),(y+h))
 		cropped_image = crop_image(image_path, area)
 		cropped_image.save("predictions{}.png".format(count))
+		text = pytesseract.image_to_string(Image.open("predictions{}.png".format(count)))
+		text= text.strip()
+		text = re.sub('\n+','', text)
+		text_in_list.append(text)
 		count+=1
+
+text_in_list = [i for i in text_in_list if len(i)!=0]
+with open('text_detected.txt', 'w', encoding="utf-8") as fobj:
+	for lines in text_in_list:
+		fobj.write("%s\n" % lines)			
