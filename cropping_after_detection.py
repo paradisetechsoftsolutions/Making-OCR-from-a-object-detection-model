@@ -4,6 +4,8 @@ Pexpect is a pure Python module for spawning child applications; controlling the
 """
 import pexpect
 import os
+import pytesseract
+import re
 from config import *
 from PIL import Image
 
