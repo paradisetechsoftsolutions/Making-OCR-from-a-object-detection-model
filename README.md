@@ -1,5 +1,7 @@
 # Making-OCR-from-a-object-detection-model
-Making OCR from a object detection model  
+Making OCR from a object detection model    
+![Screenshot from 2020-09-28 18-29-27](https://user-images.githubusercontent.com/39157936/94435316-9b892a00-01b8-11eb-8f28-c6c10b1a253e.png)
+
 
 To download the weights of the custom trained yolo model please install gdown using pip3 install gdown and use the below command  
 ```
