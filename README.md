@@ -18,7 +18,9 @@ Whereas 1vlhdj5AWVwmHNTbqgzKAlfRKVCq14TGC is the file id. Once these are downloa
 ## How it was implemented  
 * **Step 1:** Data collection. Google was used as a source to collect data. Only 50 images were collected and is being annotated.  
 * **Step 2:** These 50 images were augmentated with automatic annotation changes. [Repo](https://github.com/asetkn/Tutorial-Image-and-Multiple-Bounding-Boxes-Augmentation-for-Deep-Learning-in-4-Steps) is taken for help to implement this step. Once this step was implemeted size of images raised to 100. Different set of operation such as scale, rotate, fliplr and guassian blur were applied. CSV file was genereated which contains the pixel values  
-* **Step3:** Since we need to train the model using yolo, hence normalized the pixel values in the range 0 to 1.    
-* **Step4:** YOLO training is done. Since it has one class, so 2000 iterations are sufficient and steps 1800 are  enough for the training.   
-* **Step5:** After training the yolo using darknet coordinates of detected text are looped and images for the detected text are cropped  
+* **Step 3:** Since we need to train the model using yolo, hence normalized the pixel values in the range 0 to 1.    
+* **Step 4:** YOLO training is done. Since it has one class, so 2000 iterations are sufficient and steps 1800 are  enough for the training.   
+* **Step 5:** After training the yolo using darknet coordinates of detected text are looped and images for the detected text are cropped    
+* **Step 6:** These cropped images are passed to tessarct in the loop and each line is written to the text after applying proper regex  
 
+In this way task is done.
