@@ -23,4 +23,13 @@ Whereas 1vlhdj5AWVwmHNTbqgzKAlfRKVCq14TGC is the file id. Once these are downloa
 * **Step 5:** After training the yolo using darknet coordinates of detected text are looped and images for the detected text are cropped    
 * **Step 6:** These cropped images are passed to tessarct in the loop and each line is written to the text after applying proper regex  
 
-In this way task is done.
+In this way task is done.  
+
+## Drawbacks and Limitations   
+**Drawback 1:** When i tried to normalize pixel values to 0 and 1 some of the values goes beyond 1. I think this issue was due to pixel values obtained during augmentation. Operations such as scale and rotate may be the reasons for that.  
+**Drawback 2:** There are some images during prediction for which results are not good. When I tried to detect very small text bounding boxes overlap.   
+
+i am improving and looking for these issue.  
+
+Happy Coding!!!
+
